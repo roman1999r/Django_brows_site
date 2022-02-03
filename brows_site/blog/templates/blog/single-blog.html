@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load my_works %}
+{% load popular_posts %}
+{% block content %}
+
+
+   <!-- Blog Details Area Start -->
+    <section class="akame-blog-details-area section-padding-80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <a href="#" class="post-date"><i class="icon_clock_alt"></i> {{ post.created_at }}</a>
+                            <a href="#" class="post-comments"><i class="icon_chat_alt"></i> {{ post.views }}</a>
+                        </div>
+                        <h2 class="post-title">{{ post.title }}</h2>
+                        <a href="{% url 'post_update' post.slug %}">UPDATE</a>
+                         <form action="{% url 'post_delete' post.slug %}" method="post">
+    {% csrf_token %}
+    <button style="width: 100px; margin: auto;" type="submit" class="btn btn-primary btn-block">Delete</button>
+    </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="post-thumbnail mb-50">
+                        {% if post.photo %}
+                        <img style="height: 750px;" src="{{ post.photo.url }}" alt="">
+                        {% else %}
+                        <img src="https://picsum.photos/id/237/300/201" alt="{{ photo.title }}">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-2 col-md-2 col-lg-1">
+                    <!-- Post Share -->
+                    <div class="akame-post-share">
+                        <a href="#" data-toggle="tooltip" data-placement="left" title="Facebook" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="left" title="Twitter" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="left" title="Google Plus" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="left" title="Instagram" class="instagram"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-10 col-lg-9">
+                    <div class="blog-details-text">
+                        <p><span></span> <span>{{ post.content }}</span></p>
+                    </div>
+                </div>
+        {% get_popular 3 %}
+
+
+
+
+                    <!-- Post Author Area
+                    <div class="post-author-area d-flex align-items-center justify-content-between">
+                        Author Meta
+                        <div class="author-meta d-flex align-items-center">
+                            <div class="author-avatar">
+                                <img src="img/bg-img/43.jpg" alt="">
+                            </div>
+                            <div class="author-text">
+                                <p>Gusest Writer</p>
+                                <h5>John Smith</h5>
+                            </div>
+                        </div>
+
+                        Author Social Info
+                        <div class="author-social-info">
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                    </div>
+
+                    Leave A Reply -->
+
+
+
+
+
+{% endblock %}

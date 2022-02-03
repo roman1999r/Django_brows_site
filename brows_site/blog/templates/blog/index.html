@@ -1,0 +1,396 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load my_works %}
+{% load popular_posts %}
+{% block content %}
+
+
+<!-- Welcome Area Start -->
+    <section class="welcome-area">
+        <div class="welcome-slides owl-carousel">
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide bg-img" style="background-image: url({% static 'img/3.jpg' %});">
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-9 col-lg-6">
+                                <div class="welcome-text">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms">Я піклуюсь про <br> Ваші брови і вії</h2>
+                                    <p data-animation="fadeInUp" data-delay="400ms"> <i>“Ніщо так не прикрашає жінку, як її брови...Це як візитна карточка, тільки вони створюють той контраст обличчя, який визиває захоплення.”</i></p>
+                                    <a href="" class="btn akame-btn" data-animation="fadeInUp" data-delay="700ms">Про нас</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% comment %}
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide bg-img" style="background-image: url({% static 'img/bg-img/16.jpg' %});">
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-9 col-lg-6">
+                                <div class="welcome-text">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms">We Care About <br> Your Hair</h2>
+                                    <p data-animation="fadeInUp" data-delay="400ms">“Discover your own style. Don't try to repeat what has already been written - have the courage to do your own thing and don't be afraid to do something different.”</p>
+                                    <a href="#" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endcomment %}
+        </div>
+    </section>
+    <!-- Welcome Area End -->
+
+
+
+
+
+
+
+
+
+    <!-- Border -->
+    <div class="container">
+        <div class="border-top mt-3"></div>
+    </div>
+
+    <!-- Our Service Area Start -->
+    <section class="akame-service-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center">
+                        <h2>Мій сервіс</h2>
+                        <p><i>Оствів спокою, розкоші і гармонії.  </i> </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Single Service Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-service-area mb-80 wow fadeInUp" data-wow-delay="200ms">
+                        <img src="{% static 'img/brow.jpg' %}" alt="">
+                        <h5>Брівки</h5>
+                        <p><i>Фарбування та довготривала укладка</i></p>
+                    </div>
+                </div>
+
+                <!-- Single Service Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-service-area mb-80 wow fadeInUp" data-wow-delay="400ms">
+                        <img src="{% static 'img/lashes.jpg' %}" alt="">
+                        <h5>Війки</h5>
+                        <p><i>Ламінування та об'ємне нарощення</i></p>
+                    </div>
+                </div>
+
+                <!-- Single Service Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-service-area mb-80 wow fadeInUp" data-wow-delay="600ms">
+                        <img src="{% static 'img/pen.jpg' %}" alt="">
+                        <h5>Корекція</h5>
+                        <p><i>Корекція пинцетом та воском</i></p>
+                    </div>
+                </div>
+
+                <!-- Single Service Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-service-area mb-80 wow fadeInUp" data-wow-delay="800ms">
+                        <img src="{% static 'img/course.jpg' %}" alt="">
+                        <h5>Курси</h5>
+                        <p><i>Курси фарбування та ламінування брів</i></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Our Service Area End -->
+
+    <!-- Why Choose Us Area Start -->
+    <section class="why-choose-us-area bg-gray section-padding-80-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="choose-us-thumbnail mt-30 mb-80">
+                        <div class="choose-us-img bg-img" style="background-image: url({% static 'img/core-img/avatarka.jpg' %});"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>Чому саме я?</h2>
+                        <p><i>Красота - це природність! Я вмію творити красоту.</i></p>
+                    </div>
+                    <!-- Choose Us Content -->
+                    <div class="choose-us-content mt-30 mb-80">
+                        <ul>
+                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Мейстерність перевтілення. </li>
+                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Детальний підхід до Вашої красоти!</li>
+                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Доступна ціна - за високу якість.</li>
+                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i> Кожному клієнту - свій стиль!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us Area End -->
+
+    <!-- Portfolio Area Start -->
+
+
+
+             <section class="akame-portfolio section-padding-80 clearfix">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>Мої роботи</h2>
+                        <p>Красота не потребує жертв. Красота потребує уваги!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="portfolio-menu text-center mb-30">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row akame-portfolio-area">
+
+                <!-- Single Portfolio Item -->
+                {% for item in workphotos %}
+
+                <div class="col-12 col-sm-6 col-lg-3 akame-portfolio-item dye mb-30 wow fadeInUp" data-wow-delay="600ms">
+                    <div class="akame-portfolio-single-item">
+                        {% if item.photo %}
+                        <img style="height: 350px; width: auto" src="{{ item.photo.url }}" alt="{{ item.title }}">
+                        {% else %}
+                        <img src="https://picsum.photos/id/237/300/201" alt="{{ item.title }}">
+                        {% endif %}
+
+                        <!-- Overlay Content -->
+                        <div class="overlay-content d-flex align-items-center justify-content-center">
+                            <div class="overlay-text text-center">
+                                <h4>{{ item.title }}</h4>
+                                <p>{{ item.content }}</p>
+                            </div>
+                        </div>
+
+                        <!-- Thumbnail Zoom -->
+                        <a href="{{ item.photo.url }}" class="thumbnail-zoom"><i class="icon_search"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="view-all-btn mt-30 text-center">
+                        <a href="{% url 'portfolio' %}" class="btn akame-btn">Дивитись всі роботи</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Portfolio Area End -->
+
+    <!-- Our Expert Area Start -->
+    <section class="akame-our-expert-area section-padding-80-0">
+
+        <!-- Side Thumbnail -->
+        <div class="side-thumbnail" style="background-image: url({% static 'img/core-img/avatarka.jpg' %});"></div>
+
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-12 col-lg-6">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2>Мій досвід</h2>
+                        <p>Всім привіт. У сфері краси я з 2020 року. Займаюсь бровами та віями, а саме фарбуванням та об'ємним нарощенням. Я проходила курси у майстрів цієї сфери і зібравши всі свої знання в одне ціле, почала проводити курси.</p>
+                    </div>
+                    <!-- Our Certificate -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <!-- Single Team Member -->
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="team-member-img">
+                            <img src="{% static 'img/core-img/1.jpg' %}" alt="">
+                            <!-- Social Info -->
+<div class="team-social-info d-flex align-items-center justify-content-center">
+                                <div class="social-link">
+                                    <a href="{% static 'img/core-img/1.jpg' %}" class="thumbnail-zoom"><i class="icon_search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-info">
+                            <h5>Cettificate</h5>
+                            <p>"Фарбування брів"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Team Member -->
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="team-member-img">
+                            <img src="{% static 'img/core-img/2.jpg' %}" alt="">
+                            <!-- Social Info -->
+<div class="team-social-info d-flex align-items-center justify-content-center">
+                                <div class="social-link">
+                                    <a href="{% static 'img/core-img/2.jpg' %}" class="thumbnail-zoom"><i class="icon_search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-info">
+                            <h5>Cettificate</h5>
+                            <p>"Ламінування брів"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Team Member -->
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="team-member-img">
+                            <img src="{% static 'img/core-img/3.jpg' %}" alt="">
+                            <!-- Social Info -->
+<div class="team-social-info d-flex align-items-center justify-content-center">
+                                <div class="social-link">
+                                    <a href="{% static 'img/core-img/3.jpg' %}" class="thumbnail-zoom"><i class="icon_search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-info">
+                            <h5>Cettificate</h5>
+                            <p>"Нарощення вій"</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Single Team Member -->
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="team-member-img">
+                            <img src="{% static 'img/core-img/4.jpg' %}" alt="">
+                            <!-- Social Info -->
+<div class="team-social-info d-flex align-items-center justify-content-center">
+                                <div class="social-link">
+                                    <a href="{% static 'img/core-img/4.jpg' %}" class="thumbnail-zoom"><i class="icon_search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-info">
+                            <h5>Cettificate</h5>
+                            <p>"Ламінування вій"</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Single Team Member -->
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="team-member-img">
+                            <img src="{% static 'img/core-img/5.jpg' %}" alt="">
+                            <!-- Social Info -->
+<div class="team-social-info d-flex align-items-center justify-content-center">
+                                <div class="social-link">
+                                    <a href="{% static 'img/core-img/5.jpg' %}" class="thumbnail-zoom"><i class="icon_search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-info">
+                            <h5>Cettificate</h5>
+                            <p>"BRONSUN"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Team Member -->
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="single-team-member mb-80 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="team-member-img">
+                            <img src="{% static 'img/core-img/6.jpg' %}" alt="">
+                            <!-- Social Info -->
+<div class="team-social-info d-flex align-items-center justify-content-center">
+                                <div class="social-link">
+                                    <a href="{% static 'img/core-img/6.jpg' %}" class="thumbnail-zoom"><i class="icon_search"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-info">
+                            <h5>Cettificate</h5>
+                            <p>"Ламінування брів"</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Our Expert Area End -->
+
+    <!-- Border -->
+    <div class="container">
+        <div class="border-top mt-3"></div>
+    </div>
+
+       {% get_popular 3 %}
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="view-all-btn mt-30 text-center">
+                        <a href="{% url "blog" %}" class="btn akame-btn">Дивитись всі пости</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+
+
+
+        <!-- CTA Thumbnail -->
+        <div class="cta-thumbnail bg-img" style="background-image: url({% static 'img/bg-img/cta.png' %});"></div>
+    </section>
+    <!-- Call To Action Area End -->
+{% endblock %}

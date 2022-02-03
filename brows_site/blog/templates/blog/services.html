@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load my_works %}
+{% load popular_posts %}
+{% block content %}
+
+ <!-- Breadcrumb Area Start -->
+    <section class="breadcrumb-area section-padding-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>Our Services</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url "home" %}"><i class="icon_house_alt"></i> Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Мій сервіс</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Area End -->
+
+    <!-- Service Area Start -->
+    <section class="akame-service-area">
+
+        <!-- Single Service Item -->
+        <div class="single--service--item d-flex flex-wrap align-items-center">
+            <!-- Service Content -->
+            <div class="service-content">
+                <div class="service-text">
+                    <h2>Брови &amp; Корекція</h2>
+                    <p><span>Корекція брів (пинцет/віск):</span> <span>80₴</span></p>
+                    <p><span>Фарбування брів + корекція:</span> <span>150₴</span></p>
+                    <p><span>Ламінування брів + корекція:</span>
+                        <span>230₴</span></p>
+                    <p><span>Ламінування + фарбування + корекція:</span> <span>290₴</span></p>
+                    <p><span>Видалення волосків над верхньою губою:</span> <span>50₴</span></p>
+                    <p><span>SPA - догляд для брів:</span> <span>50₴</span></p>
+                </div>
+            </div>
+            <!-- Service Thumbnail -->
+            <div class="service-thumbnail bg-img jarallax" style="background-image: url( {% static 'img/ser_brow.jpg' %} );"></div>
+        </div>
+
+        <!-- Single Service Item -->
+        <div class="single--service--item odd-item d-flex flex-wrap align-items-center">
+            <!-- Service Thumbnail -->
+            <div class="service-thumbnail bg-img jarallax" style="background-image: url( {% static 'img/ser_lasg.jpg' %});"></div>
+
+            <!-- Service Content -->
+            <div class="service-content">
+                <div class="service-text">
+                    <h2>Вії</h2>
+                    <p><span>Фарбування вій:</span> <span>50₴</span></p>
+                    <p><span>Ламінування вій:</span> <span>300₴</span></p>
+                    <p><span>Нарощення вій(класика):</span> <span>240₴</span></p>
+                    <p><span>Нарощення вій (2D):</span> <span>290₴</span></p>
+                    <p><span>Нарощення вій (3D):</span> <span>340₴</span></p>
+                    <p><span>Зняття вій без наступного нарощення :</span> <span>50₴</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Service Item -->
+        <div class="single--service--item d-flex flex-wrap align-items-center">
+            <!-- Service Content -->
+            <div class="service-content">
+                <div class="service-text">
+                    <h2>Курси</h2>
+                    <p><span>Майстер бровист:</span> <span>1500₴</span></p>
+                    <p><span>Ламінування брів:</span> <span>800₴</span></p>
+                    <p><span>Сам собі бровист:</span> <span>500₴</span></p>
+                    <p><span>Курс "BRONSUN":</span> <span>700₴</span></p>
+                </div>
+            </div>
+            <!-- Service Thumbnail -->
+            <div class="service-thumbnail bg-img jarallax" style="background-image: url( {% static 'img/ser_cours.jpg' %});"></div>
+        </div>
+
+    </section>
+    <!-- Service Area End -->
+
+{% endblock %}

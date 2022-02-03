@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load my_works %}
+{% block content %}
+
+ <!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area section-padding-80" xmlns="http://www.w3.org/1999/html">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>Our Blog</h2>
+                        <button class="btn btn-dark" type="button" > <a  style="color: white" href="{% url 'add_post' %}">Створити пост</a></button>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><i class="icon_house_alt"></i> Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Area End -->
+
+
+
+     <!-- News Area Start -->
+    <section class="akame-news-area section-padding-0-80">
+        <div class="container">
+            <div class="row mx-sm-n4 akame-blog-masonary">
+                    {% for item in posts %}
+                <!-- Single Blog Item -->
+                <div class="col-12 col-sm-6 col-lg-4 px-4 akame-blog-masonary-item mb-50 wow fadeInUp" data-wow-delay="200ms">
+
+                    <!-- Single Post Area -->
+                    <div class="single-post-area">
+                        <div class="post-thumbnail">
+                            {% if item.photo %}
+                            <a href="{{ item.get_absolute_url }}"><img style="height: 250px; width: auto; margin: auto;" src="{{ item.photo.url }}" alt=""></a>
+                            {% else %}
+                                        <img src="https://picsum.photos/id/237/300/201" alt="{{ post.title }}">
+                            {% endif %}
+                        </div>
+                        <div class="post-content">
+                            <a href="{{ item.get_absolute_url }}" class="post-title">{{ item.title|truncatewords_html:10|safe }}</a>
+                            <div class="post-meta">
+                                <a href="#" class="post-date"><i class="icon_clock_alt"></i>{{ item.created_at|date:"d.m.Y" }}</a>
+                                <a href="#" class="post-comments"><i class="icon_chat_alt"></i> {{ item.views }}</a>
+                            </div>
+                            <p>{{ item.content|truncatewords_html:20|safe }}</p>
+                            <hr>
+                        </div> <a href="{{ item.get_absolute_url }}" class="btn akame-btn">View more...</a>
+
+                    </div>
+
+                </div>
+                {% endfor %}
+
+
+                </div>
+        </div>
+
+
+            {% if page_obj.has_other_pages %}
+            <div style="" class="pegination">
+                <div class="nav-links">
+                    {% for p in page_obj.paginator.page_range %}
+                        {% if page.obj.number == p %}
+                            <span class="page-numbers current">{{ p }}</span>
+                        {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
+                            <a class="page-numbers" href="?page={{ p }}">{{ p }}</a>
+                        {% endif %}
+
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <a class="page-numbers" href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+
+    </section>
+    <!-- News Area End -->
+
+    <!-- Border -->
+    <div class="container">
+        <div class="border-top"></div>
+    </div>
+
+
+{% endblock %}

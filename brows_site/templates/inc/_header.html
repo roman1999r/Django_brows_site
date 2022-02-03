@@ -1,0 +1,86 @@
+{% load static %}
+<!-- Header Area Start -->
+    <header class="header-area">
+        <!-- Top Header Area Start -->
+        <div class="top-header-area">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-4">
+                        <div class="top-header-content">
+                            <p>Вітаю у Brows салоні!</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-2"><h1><a style="color: white" href="{% url 'adm' %}">ADMIN</a></h1></div>
+                    <div class="col-6">
+                        <div class="top-header-content text-right">
+                            <p><i class="fa fa-clock-o" aria-hidden="true"></i> Пн-Пт: 10:30 - 18:00 <span class="mx-2"></span> | <span class="mx-2"></span> <i class="fa fa-phone" aria-hidden="true"></i> Телефон: +38 095 051 9817</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Header Area End -->
+
+        <!-- Main Header Start -->
+        <div class="main-header-area">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between" id="akameNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="{% url "home" %}"><img style="height: 65px; width: 170px" src="{% static 'img/logo.jpg' %}" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- Menu Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul id="nav">
+                                    <li class="active"><a href="{% url "home" %}">Головна</a></li>
+                                    <li><a href="#">Сторінки</a>
+                                        <ul class="dropdown">
+                                            <li><a href="">- Головна</a></li>
+                                            <li><a href="{% url "about_us" %}">- Про мене</a></li>
+                                            <li><a href="{% url "services" %}">- Сервіс</a></li>
+                                            <li><a href="{% url "portfolio" %}">- Портфоліо</a></li>
+                                            <li><a href="{% url "blog" %}">- Блог</a></li>
+                                            <li><a href="./contact.html">- Контакти</a></li>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url "portfolio" %}">Фото</a></li>
+                                    <li><a href="{% url "services" %}">Сервіс</a></li>
+                                    <li><a href="{% url "about_us" %}">Про мене</a></li>
+                                    <li><a href="{% url "blog" %}">Блог</a></li>
+                                    <li><a href="./contact.html">Контакти</a></li>
+                                </ul>
+
+                                <!-- Cart Icon -->
+                                <div class="cart-icon ml-5 mt-4 mt-lg-0">
+                                    <a href="#"><i class="icon_cart"></i></a>
+                                </div>
+
+                                <!-- Book Icon -->
+                                <div class="book-now-btn ml-5 mt-4 mt-lg-0 ml-md-4">
+                                    <a href="{% url "add_event" %}" class="btn akame-btn">Записатись</a>
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->

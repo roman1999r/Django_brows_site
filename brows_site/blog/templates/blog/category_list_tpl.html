@@ -1,0 +1,20 @@
+<div class="{{ category_list_class }}">
+
+<div class="row">
+                <div class="col-12">
+                    <div class="portfolio-menu text-center mb-50">
+                        <ul class="nav justify-content-center">
+                             <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url "portfolio" %}">All</a>
+                                </li>
+                            {% for item in categories %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+                                </li>
+                            {% endfor %}
+
+</ul>
+                    </div>
+                </div>
+            </div>
+    </div>

@@ -1,0 +1,67 @@
+    <section class="akame-portfolio section-padding-80 clearfix">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>Our Work</h2>
+                        <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="portfolio-menu text-center mb-30">
+                        <ul class="nav justify-content-center">
+                            {% for category in category %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">{{ category.title }}</a>
+                                </li>
+                            {% endfor %}
+
+</ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row akame-portfolio-area">
+
+                <!-- Single Portfolio Item -->
+                {% for photo in photos %}
+
+                <div class="col-12 col-sm-6 col-lg-3 akame-portfolio-item dye mb-30 wow fadeInUp" data-wow-delay="600ms">
+                    <div class="akame-portfolio-single-item">
+                        {% if photo.photo %}
+                        <img src="{{ photo.photo.url }}" alt="{{ photo.title }}">
+                        {% else %}
+                        <img src="https://picsum.photos/id/237/300/201" alt="{{ photo.title }}">
+                        {% endif %}
+
+                        <!-- Overlay Content -->
+                        <div class="overlay-content d-flex align-items-center justify-content-center">
+                            <div class="overlay-text text-center">
+                                <h4>{{ photo.title }}</h4>
+                                <p>{{ photo.content }}</p>
+                            </div>
+                        </div>
+
+                        <!-- Thumbnail Zoom -->
+                        <a href="img/bg-img/9.jpg" class="thumbnail-zoom"><i class="icon_search"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="view-all-btn mt-30 text-center">
+                        <a href="portfolio.html" class="btn akame-btn">View All Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

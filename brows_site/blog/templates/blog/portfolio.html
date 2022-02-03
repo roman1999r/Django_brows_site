@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load my_works %}
+{% load category_list %}
+{% block content %}
+
+    <!-- Breadcrumb Area Start -->
+    <section class="breadcrumb-area section-padding-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2>Портфоліо</h2>
+                        <button class="btn btn-dark" type="button" > <a  style="color: white" href="{% url 'add_photo' %}">Добавити фото</a></button>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url "home" %}"><i class="icon_house_alt"></i> Головна</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Фото</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Area End -->
+
+ <!-- Portfolio Area Start -->
+    <section class="akame-portfolio section-padding-0-80 clearfix">
+        <div class="container">
+
+
+            {% show_menu %}
+
+            <div class="row akame-portfolio-area">
+
+                                <!-- Single Portfolio Item -->
+                {% for item in posts %}
+
+                <div class="col-12 col-sm-6 col-lg-3 akame-portfolio-item dye mb-30 wow fadeInUp" data-wow-delay="600ms">
+                    <div class="akame-portfolio-single-item">
+                        {% if item.photo %}
+                        <img src="{{ item.photo.url }}" alt="{{ item.title }}">
+                        {% else %}
+                        <img src="https://picsum.photos/id/237/300/201" alt="{{ item.title }}">
+                        {% endif %}
+
+                        <!-- Overlay Content -->
+                        <div class="overlay-content d-flex align-items-center justify-content-center">
+                            <div class="overlay-text text-center">
+                                <h4>{{ item.title }}</h4>
+                                <p>{{ item.content }}</p>
+                                <a href="{% url 'photo_update' item.slug %}" >update</a>
+                                <form action="{% url 'photo_delete' item.slug %}" method="post">
+    {% csrf_token %}
+    <button style="width: 100px; margin: auto;" type="submit" class="btn btn-primary btn-block">Delete</button>
+    </form>
+                            </div>
+                        </div>
+
+                        <!-- Thumbnail Zoom -->
+                        <a href="{{ item.photo.url }}" class="thumbnail-zoom"><i class="icon_search"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="view-all-btn mt-30 text-center">
+                        <a href="{% url 'portfolio' %}" class="btn akame-btn">View All Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+                     {% if page_obj.has_other_pages %}
+            <div style="" class="pegination">
+                <div class="nav-links">
+                    {% for p in page_obj.paginator.page_range %}
+                        {% if page.obj.number == p %}
+                            <span class="page-numbers current">{{ p }}</span>
+                        {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
+                            <a class="page-numbers" href="?page={{ p }}">{{ p }}</a>
+                        {% endif %}
+
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <a class="page-numbers" href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+    </section>
+    <!-- Portfolio Area End -->
+
+
+{% endblock %}

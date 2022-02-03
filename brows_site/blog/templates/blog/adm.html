@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div>
+ <span class="navbar-text">
+            {% if request.user.is_authenticated %}
+                Добро пожаловать, {{ user.username }} | <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="admin" >Login</a>
+            {% endif %}
+        </span>
+</div>
+
+
+<div>
+    <ul>
+        <li><a href="{% url 'add_post' %}">Добавить новость</a></li>
+        <li><a href="">Добавить роботу</a></li>
+        <li><a href="{% url 'home' %}">Повернутись на сайт </a></li>
+    </ul>
+</div>
+</body>
+</html>

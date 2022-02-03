@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Add news :: {{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+<div style="width: 500px;margin: auto;">
+    <h1>Добавити пост</h1>
+    <form action="{% url 'photo_update' workphotos.slug %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.as_p}}
+
+
+    <button type="submit" class="btn btn-primary btn-block">Update Photo</button>
+    </form>
+
+</div>
+{% endblock %}

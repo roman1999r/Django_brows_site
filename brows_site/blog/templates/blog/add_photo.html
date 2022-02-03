@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Add photo :: {{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+<div style="width: 500px;margin: auto;">
+    <h1>Добавити фото</h1>
+    <form action="{% url 'add_photo' %}" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ form.as_p}}
+
+    <button type="submit" class="btn btn-primary btn-block">add photo</button>
+    </form>
+</div>
+{% endblock %}
